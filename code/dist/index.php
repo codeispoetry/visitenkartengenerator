@@ -11,9 +11,6 @@ if (file_exists($samlfile)) {
     $attributes = $as->getAttributes();
     $landesverband = (int) substr($attributes['membershipOrganizationKey'][0], 1, 2);
 
-    if( $landesverband == 3){
-        $is_berlin = true;
-    }
 }
 
 if (file_exists('log/do.php')){
@@ -39,45 +36,16 @@ if (file_exists('log/do.php')){
     <div class="row">
         <div class="col-12 col-md-9">
 
-                <div class="col-12 col-md-4 mb-5 text-center">
-                    <div id="canvas1" class="canvas"></div>
-                </div>
+                <div class="d-flex justify-content-center ">
+                    <div id="canvas1" class="canvas mr-3"></div>
 
-                <div class="col-12 col-md-4 mb-5 text-center">
                     <div id="canvas2" class="canvas"></div>
-                    <button class="btn btn-secondary btn-sm mt-3 download">
-                        <i class="fas fa-download"></i> Download
-                    </button>
-
                 </div>
         </div>
 
         <div class="col-12 col-md-3 cockpit">
-            <input type="text" name="subline" id="subline" value="" placeholder="Deine Stadt" class="form-control">
-            <div class="message bg-danger text-white small p-2">
-                Die Worte Kreisverband, Ortsverband, KV und OV sind nicht
-                nötig im Logo. Überlege bitte, ob Du sie wirklich brauchst.
-            </div>
+           <?php require_once('cockpit.php'); ?>
         </div>
-    </div>
-
-    <div class="row <?php if( !$is_berlin) echo 'd-none'?>">
-        <div class="col-12 text-center pt-4 pb-3">
-            <h1 class="text-uppercase h6">Logovariante Berlin</h1>
-        </div>
-
-        <?php for($i = 4; $i <= 6; $i++){ ?>
-            <div class="col-12 col-md-4 mb-5 text-center">
-                <div id="canvas<?php echo $i;?>" class="canvas <?php if(in_array($i,array(2,5))) echo 'bg-chess'; ?>"></div>
-                    <button class="btn btn-secondary btn-sm mt-3 download" data-canvas="<?php echo $i;?>" data-format="png">
-                        <i class="fas fa-download"></i> png
-                    </button>
-                    <button class="btn btn-secondary btn-sm mt-3 download" data-canvas="<?php echo $i;?>" data-format="svg">
-                        <i class="fas fa-download"></i> svg
-                    </button>
-            </div>
-        <?php } ?>
-
     </div>
 
 </div>

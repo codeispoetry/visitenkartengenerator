@@ -17,7 +17,6 @@ const subline = {
             }
         );
 
-        
         subline.svg2 = backside.text($('#subline').val().toUpperCase()).fill( 'white' ).move(5,125).font(
             {
                 family: 'Futura Condensed Extra Bold',

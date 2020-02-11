@@ -1,4 +1,6 @@
-$('.download').click(function () {
+$('.download').click(function (e) {
+
+    e.preventDefault();
     $('.downlaod').prop("disabled", true);
     let description = $(this).html();
     $(this).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Augenblick bitte');
@@ -14,7 +16,7 @@ $('.download').click(function () {
         url: 'createpic.php',
         data: {svgFrontside: dataFrontside, svgBackside: dataBackside, format: format },
         success: function (data, textStatus, jqXHR) {
-
+console.log("data = " + data);
             let obj = JSON.parse(data);
             $('.download').prop("disabled", false);
             $('.canvas').removeClass('opacity');
@@ -36,7 +38,7 @@ $('.download').click(function () {
             downloadname = downloadname.replace(/\-+/g,'-');
             downloadname = downloadname.replace(/^\-/g,'');
             downloadname = downloadname.replace(/\-$/g,'');
-console.log(obj.basename)
+
             window.location.href = 'download.php?file=' + obj.basename + '&downloadname=' + downloadname;
         }
     });
