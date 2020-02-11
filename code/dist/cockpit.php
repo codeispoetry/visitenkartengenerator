@@ -37,14 +37,20 @@
 
         <div class="list-group-item list-group-item-action flex-column align-items-start">
             <div class="d-flex align-items-lg-center">
-                <input type="text" name="subline" id="subline" value="" placeholder="Text links unten, z.B. Homepage" class="form-control">
-                <i class="fa fa-broom ml-1 text-primary cursor-pointer subline-change-color ml-1" title="Farbe wechseln"></i>
+                <input type="text" name="name" id="name" value="" placeholder="Name" class="form-control trigger">
             </div>
 
             <div class="d-flex align-items-lg-center">
-                <input type="text" placeholder="Bildnachweis" name="copyright" id="copyright" value="" class="form-control">
-                <i class="fa fa-broom ml-1 text-primary cursor-pointer copyright-change-color ml-1" title="Farbe wechseln"></i>
+                <input type="text" placeholder="Amt" name="title" id="title" value="" class="form-control trigger">
             </div>
+        </div>
+
+        <div class="list-group-item list-group-item-action flex-column align-items-start">
+            <textarea placeholder="Linke Spalte" name="left" id="left" class="form-control trigger"></textarea>
+        </div>
+
+        <div class="list-group-item list-group-item-action flex-column align-items-start">
+            <textarea placeholder="Rechte Spalte" name="right" id="right" class="form-control trigger"></textarea>
         </div>
 
         <div class="list-group-item list-group-item-action flex-column align-items-start">

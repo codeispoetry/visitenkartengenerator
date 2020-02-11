@@ -21,7 +21,7 @@ console.log("data = " + data);
             $('.download').prop("disabled", false);
             $('.canvas').removeClass('opacity');
             $(thisButton).html(description);
-            let downloadname = $('#subline').val().toLowerCase();
+            let downloadname = $('#name').val().toLowerCase();
             downloadname = downloadname.replace(/[ä|ö|ü|ß]/g  ,function(match){
                 switch(match){
                     case 'ä':
