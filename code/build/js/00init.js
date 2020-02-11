@@ -12,6 +12,9 @@ $(document).ready(function () {
     setDrawsize();
     background.draw();
     text.draw();
+    logo.draw();
+    backlogo.draw();
+
 
     $('.message').hide();
 
