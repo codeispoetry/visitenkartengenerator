@@ -54,6 +54,10 @@
         </div>
 
         <div class="list-group-item list-group-item-action flex-column align-items-start">
+            <input type="text" placeholder="Stadt" name="city" id="city" value="" class="form-control trigger">
+        </div>
+
+        <div class="list-group-item list-group-item-action flex-column align-items-start">
             <button class="btn btn-secondary btn-sm mt-3 download">
                 <i class="fas fa-download"></i> Download
             </button>
