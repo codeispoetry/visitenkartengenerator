@@ -3,16 +3,10 @@
 $filename = sanitize_filename($_GET['file']);
 $downloadname = $_GET['downloadname'] ?: 'gruene';
 
+$contentType = 'application/pdf';
+$format = 'pdf';
 
-$contentType = 'image/png';
-$format = 'png';
-
-if ($_GET['format'] && $_GET['format'] == 'svg') {
-    $contentType = 'image/svg';
-    $format = 'svg';
-}
-
-logthis( $downloadname );
+logthis( $filename );
 
 header('Content-Type: ' . $contentType);
 header('Content-Disposition: attachment; filename="' . $downloadname . '.' . $format . '"');
@@ -31,5 +25,5 @@ function logthis( $filename){
 }
 
 function sanitize_filename($var){
-    return preg_replace('/[^a-zA-Z0-9]/', '', $var);
+    return preg_replace('/[^a-zA-Z0-9_]/', '', $var);
 }

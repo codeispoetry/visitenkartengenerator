@@ -4,17 +4,16 @@ $('.download').click(function () {
     $(this).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Augenblick bitte');
     $('.canvas').addClass('opacity');
 
-    let canvas = $(this).data('canvas');
-    let data = draw[canvas].svg();
-    let format = $(this).data('format');
+    let dataFrontside = frontside.svg();
+    let dataBackside = backside.svg();
+    let format = 'pdf';
     let thisButton = this;
 
     $.ajax({
         type: "POST",
         url: 'createpic.php',
-        data: {svg: data, format: format },
+        data: {svgFrontside: dataFrontside, svgBackside: dataBackside, format: format },
         success: function (data, textStatus, jqXHR) {
-            console.log(data);
 
             let obj = JSON.parse(data);
             $('.download').prop("disabled", false);
@@ -37,8 +36,8 @@ $('.download').click(function () {
             downloadname = downloadname.replace(/\-+/g,'-');
             downloadname = downloadname.replace(/^\-/g,'');
             downloadname = downloadname.replace(/\-$/g,'');
-
-            window.location.href = 'download.php?file=' + obj.basename + '&format=' + format + '&downloadname=' + downloadname;
+console.log(obj.basename)
+            window.location.href = 'download.php?file=' + obj.basename + '&downloadname=' + downloadname;
         }
     });
 });
