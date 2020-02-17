@@ -10,17 +10,18 @@ $bothsidesfilePDF = sprintf('tmp/%s_full.pdf', $filename);
 
 
 $svg = rewriteSVG( $_POST['svgFrontside']);
+$svg = replaceWidthAndHeight( $svg );
 file_put_contents($frontfile, $svg);
 
 $svg = rewriteSVG( $_POST['svgBackside']);
+$svg = replaceWidthAndHeight( $svg );
 file_put_contents($backfile, $svg);
 
-$exportWidth = 1000;
 
 $format = 'pdf';
 
-convert($frontfile, $exportWidth, $format);
-convert($backfile, $exportWidth, $format);
+convert($frontfile, $format);
+convert($backfile, $format);
 
 $command = sprintf('pdfunite %s %s %s', $frontfilePDF, $backfilePDF, $bothsidesfilePDF);
 exec( $command );
@@ -29,6 +30,12 @@ exec( $command );
 $return = [];
 $return['basename'] = basename($bothsidesfilePDF, '.pdf' );
 echo json_encode($return);
+
+function replaceWidthAndHeight( $svg ){
+    $svg = preg_replace('/width="([0-9]*?)"/','width="87mm"', $svg, 1);
+    $svg = preg_replace('/height="([0-9]*?)"/','height="57mm"', $svg, 1);
+    return $svg;
+}
 
 function rewriteSVG( $svg ){
     $svg = preg_replace('/_small/', '', $svg);
@@ -45,7 +52,6 @@ function rewriteSVG( $svg ){
 
     $svg = preg_replace('/NS([1-9]|[1-9][0-9]):/', 'xlink:', $svg); // Remove offending NS<number>: in front of href tags, will only remove NS0 - NS99
 
-
     // Für den Firefox
     $svg = preg_replace('#([^:])\/\/#', "$1/", $svg);
 
@@ -55,7 +61,7 @@ function rewriteSVG( $svg ){
 }
 
 
-function convert($filename, $width, $format){
+function convert($filename, $format){
     switch($format){
         case 'svg':
             $command = sprintf("inkscape %s --export-text-to-path --export-plain-svg=%s",
@@ -68,9 +74,8 @@ function convert($filename, $width, $format){
                 'tmp/' . basename($filename, '.svg') . '.pdf');
             break;
         default:
-            $command = sprintf("inkscape %s --export-width=%d --export-{$format}=%s --export-dpi=90 --export-background-opacity=0",
+            $command = sprintf("inkscape %s--export-{$format}=%s --export-dpi=90 --export-background-opacity=0",
                 $filename,
-                $width,
                 'tmp/' . basename($filename, 'svg') . $format);
     }
 
