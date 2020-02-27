@@ -12,8 +12,12 @@ $('.size').bind('input propertychange', function () {
 });
 
 function setDrawsize() {
-    let width = $('#width').val();
-    let height = $('#height').val();
+    let factor = 5;
+    let width = $('#width').val() * factor;
+    let height = $('#height').val() * factor;
+
+    config.width = width;
+    config.height = height;
 
     frontside.size(width, height);
     backside.size(width, height);

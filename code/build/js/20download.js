@@ -14,7 +14,13 @@ $('.download').click(function (e) {
     $.ajax({
         type: "POST",
         url: 'createpic.php',
-        data: {svgFrontside: dataFrontside, svgBackside: dataBackside, format: format, width: $('#width').val(), height: $('#height').val() },
+        data: {svgFrontside: dataFrontside, svgBackside: dataBackside,
+            format: format,
+            widthMM: $('#width').val(),
+            heightMM: $('#height').val(),
+            widthPX:  config.width,
+            heightPX: config.height
+        },
         success: function (data, textStatus, jqXHR) {
             let obj = JSON.parse(data);
             $('.download').prop("disabled", false);

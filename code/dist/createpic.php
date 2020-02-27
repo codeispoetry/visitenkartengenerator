@@ -32,8 +32,13 @@ $return['basename'] = basename($bothsidesfilePDF, '.pdf' );
 echo json_encode($return);
 
 function resizeSVG($svg ){
-    $svg = preg_replace('/width="([0-9]*?)"/','width="87mm"', $svg, 1);
-    $svg = preg_replace('/height="([0-9]*?)"/','height="57mm" viewBox="0 0 435 285"', $svg, 1);
+    $widthMM = (int) $_POST['widthMM'];
+    $heightMM = (int) $_POST['heightMM'];
+    $widthPX = (int) $_POST['widthPX'];
+    $heightPX = (int) $_POST['heightPX'];
+
+    $svg = preg_replace('/width="([0-9]*?)"/','width="' .$widthMM . 'mm"', $svg, 1);
+    $svg = preg_replace('/height="([0-9]*?)"/','height="' .$heightMM . 'mm" viewBox="0 0 ' . $widthPX . ' ' . $heightPX . '"', $svg, 1);
 
     return $svg;
 }

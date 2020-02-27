@@ -2,6 +2,7 @@
 frontside = SVG().addTo('#canvas1');
 backside = SVG().addTo('#canvas2');
 
+config = {};
 
 $(document).ready(function () {
     $('#name').val("Thomas Rose");
