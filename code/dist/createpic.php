@@ -10,11 +10,11 @@ $bothsidesfilePDF = sprintf('tmp/%s_full.pdf', $filename);
 
 
 $svg = rewriteSVG( $_POST['svgFrontside']);
-$svg = replaceWidthAndHeight( $svg );
+$svg = resizeSVG( $svg );
 file_put_contents($frontfile, $svg);
 
 $svg = rewriteSVG( $_POST['svgBackside']);
-$svg = replaceWidthAndHeight( $svg );
+$svg = resizeSVG( $svg );
 file_put_contents($backfile, $svg);
 
 
@@ -31,9 +31,10 @@ $return = [];
 $return['basename'] = basename($bothsidesfilePDF, '.pdf' );
 echo json_encode($return);
 
-function replaceWidthAndHeight( $svg ){
+function resizeSVG($svg ){
     $svg = preg_replace('/width="([0-9]*?)"/','width="87mm"', $svg, 1);
-    $svg = preg_replace('/height="([0-9]*?)"/','height="57mm"', $svg, 1);
+    $svg = preg_replace('/height="([0-9]*?)"/','height="57mm" viewBox="0 0 435 285"', $svg, 1);
+
     return $svg;
 }
 

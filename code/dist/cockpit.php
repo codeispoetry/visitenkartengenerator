@@ -14,7 +14,7 @@
                         <input type="number" value="435" class="form-control size" name="width" id="width" step="1">
                         <span class="m-1">x</span>
                         <input type="number" value="285" class="form-control size mr-1" name="height" id="height" step="1">
-                        <span class="m-1 mr-3">Pixel</span>
+                        <span class="m-1 mr-3">Millimeter</span>
                         <select class="form-control selectpicker fas d-none" id="sizepresets">
                             <option class="fas">&#xf5cb;</option>
 
