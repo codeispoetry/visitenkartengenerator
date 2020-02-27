@@ -16,8 +16,6 @@ $(document).ready(function () {
     text.draw();
     logo.draw();
     backlogo.draw();
-    backlogotext.draw();
-
 
     $('.message').hide();
 
