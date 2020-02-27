@@ -6,7 +6,7 @@ const logo = {
 
     draw() {
         let width = frontside.width() * 0.11;
-        let padding = frontside.width() * 0.066;
+        let padding = frontside.width() * 0.04;
         logo.svg.size( width ).move( frontside.width() - logo.svg.width() - padding, padding).front().fill('#FEEE00');
     }
 

@@ -77,7 +77,7 @@ const backlogo = {
             backlogo.svg.add( backlogo.pattern[ i ]);
         }
 
-        backlogo.svg.add( backside.text($('#city').val().toUpperCase()).fill( "white" ).move(2,126.85).font(backlogo.Futura ) );
+        backlogo.svg.add( backside.text($('#city').val().toUpperCase()).fill( "white" ).move(2,126.74).font(backlogo.Futura ) );
 
         backlogo.center();
 
