@@ -14,9 +14,8 @@ $('.download').click(function (e) {
     $.ajax({
         type: "POST",
         url: 'createpic.php',
-        data: {svgFrontside: dataFrontside, svgBackside: dataBackside, format: format },
+        data: {svgFrontside: dataFrontside, svgBackside: dataBackside, format: format, width: $('#width').val(), height: $('#height').val() },
         success: function (data, textStatus, jqXHR) {
-console.log("data = " + data);
             let obj = JSON.parse(data);
             $('.download').prop("disabled", false);
             $('.canvas').removeClass('opacity');
