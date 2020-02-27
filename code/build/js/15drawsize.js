@@ -25,6 +25,8 @@ function setDrawsize() {
     $('.canvas').width(width);
     $('.canvas').height(height);
 
+    backlogo.center();
+
 }
 
 function setDimensions(width, height) {
