@@ -5,7 +5,9 @@ const logo = {
     svg: frontside.path( sonnenblume),
 
     draw() {
-        logo.svg.size( 70).move( frontside.width() - logo.svg.width() - 15, 15).front().fill('#FEEE00');
+        let width = frontside.width() * 0.11;
+        let padding = frontside.width() * 0.066;
+        logo.svg.size( width ).move( frontside.width() - logo.svg.width() - padding, padding).front().fill('#FEEE00');
     }
 
 };

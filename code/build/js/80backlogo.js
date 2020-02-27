@@ -77,14 +77,14 @@ const backlogo = {
             backlogo.svg.add( backlogo.pattern[ i ]);
         }
 
-        backlogo.svg.add( backside.text($('#city').val().toUpperCase()).fill( "white" ).move(2,126.7).font(backlogo.Futura ) );
+        backlogo.svg.add( backside.text($('#city').val().toUpperCase()).fill( "white" ).move(2,126.85).font(backlogo.Futura ) );
 
         backlogo.center();
 
     },
 
     center(){
-        backlogo.svg.size( backside.width() * 0.4 );
+        backlogo.svg.size( backside.width() * 0.43 );
 
         let x = ( backside.width() - backlogo.svg.width() ) / 2;
         let y = ( backside.height() - backlogo.svg.height() ) / 2;

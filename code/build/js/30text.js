@@ -24,13 +24,18 @@ const text = {
         text.left.remove();
         text.right.remove();
 
-        let paddingleft = 40;
+        let paddingleft = frontside.width() * 0.086;
+        let nameY = frontside.height() * 0.336;
+        let titleY = nameY + this.ArvoGruen.size * 1.3;
 
-        text.name = frontside.text($('#name').val().toUpperCase()).fill( "white" ).move(paddingleft, 40).font(text.ArvoGruen );
-        text.title = frontside.text($('#title').val()).fill( "white" ).move(paddingleft, 70).font(text.Arvo );
+        let allY = frontside.height() * 0.56;
+        let columnRightX = frontside.width() * 0.55;
 
-        text.left = frontside.text($('#left').val()).fill( "white" ).move(paddingleft, 120).font(text.Arvo );
-        text.right = frontside.text($('#right').val()).fill( "white" ).move(paddingleft + 150, 120).font(text.Arvo );
+        text.name = frontside.text($('#name').val().toUpperCase()).fill( "white" ).move(paddingleft, nameY).font(text.ArvoGruen );
+        text.title = frontside.text($('#title').val()).fill( "white" ).move(paddingleft, titleY).font(text.Arvo );
+
+        text.left = frontside.text($('#left').val()).fill( "white" ).move(paddingleft, allY).font(text.Arvo );
+        text.right = frontside.text($('#right').val()).fill( "white" ).move(columnRightX, allY).font(text.Arvo );
 
     },
 };
