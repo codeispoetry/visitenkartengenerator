@@ -26,7 +26,7 @@ const text = {
 
         let paddingleft = frontside.width() * 0.086;
         let nameY = frontside.height() * 0.336;
-        let titleY = nameY + this.ArvoGruen.size * 1.3;
+        let titleY = nameY + text.ArvoGruen.size * 1.3;
 
         let allY = frontside.height() * 0.56;
         let columnRightX = frontside.width() * 0.55;
