@@ -16,9 +16,19 @@ $(document).ready(function () {
     text.draw();
     logo.draw();
     backlogo.draw();
-    backlogotext.draw();
 
 
     $('.message').hide();
+
+
+    $('#logo-tab').click( function(){
+        quote.svg.remove();
+        backlogo.draw();
+    });
+
+    $('#quote-tab').click( function(){
+        backlogo.svg.remove();
+        quote.draw();
+    });
 
 });

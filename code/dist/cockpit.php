@@ -57,21 +57,35 @@
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#tab-logo" role="tab" aria-controls="home" aria-selected="true">Logo</a>
+                    <a class="nav-link active" id="logo-tab" data-toggle="tab" href="#tab-logo" role="tab" aria-controls="home" aria-selected="true">Logo</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#tab-quote" role="tab" aria-controls="profile" aria-selected="false">Zitat</a>
+                    <a class="nav-link" id="quote-tab" data-toggle="tab" href="#tab-quote" role="tab" aria-controls="profile" aria-selected="false">Zitat</a>
                 </li>
 
             </ul>
 
             <!-- Tab panes -->
             <div class="tab-content">
-                <div class="tab-pane active" id="tab-logo" role="tabpanel" aria-labelledby="home-tab">
+                <div class="tab-pane active" id="tab-logo" role="tabpanel" aria-labelledby="logo-tab">
                     <input type="text" placeholder="Stadt" name="city" id="city" value="" class="form-control trigger">
                 </div>
-                <div class="tab-pane" id="tab-quote" role="tabpanel" aria-labelledby="profile-tab">
-                    <textarea placeholder="Zitat" name="quote" id="quote" class="form-control trigger"></textarea>
+                <div class="tab-pane" id="tab-quote" role="tabpanel" aria-labelledby="quote-tab">
+                    <div>
+                        <input type="text" placeholder="Text über der Linie" name="textbefore" id="textbefore" value="" class="d-none form-control">
+                        <textarea placeholder="Zitat" name="quote" id="quote" class="form-control trigger">Hier steht ein
+[Zitat]</textarea>
+                        <input type="text" placeholder="Text unter der Linie" name="textafter" id="textafter" value="" class="form-control">
+                    </div>
+                    <div>
+                        <label>
+                            <input type="checkbox" name="textsamesize" id="textsamesize">
+                            Zeilen gleich lang
+                        </label>
+                    </div>
+                    <div>
+                        <small>Text in eckigen Klammern [ ] wird gelb</small>
+                    </div>
                 </div>
             </div>
         </div>
