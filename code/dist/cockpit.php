@@ -3,17 +3,17 @@
 
         <div class="list-group-item list-group-item-action flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between">
-                <h6 class="mb-1">Ausgabegröße</h6>
-                <small class="text-primary cursor-pointer" id="sizereset"><i class="fas fa-undo-alt"></i>
-                    zurücksetzen</small>
-
+                <h6 class="mb-1">Datenformat</h6>
+                <small class="" title="Mit Beschnittzugabe">
+                    <i class="fas fa-question-circle"></i>
+                </small>
             </div>
             <div class="mb-1 list-group-item-content">
                 <div class="form-inline">
                     <div class="form-row sizecontainer">
-                        <input type="number" value="87" class="form-control size" name="width" id="width" step="1">
+                        <input type="number" value="91" class="form-control size" name="width" id="width" step="1">
                         <span class="m-1">x</span>
-                        <input type="number" value="57" class="form-control size mr-1" name="height" id="height" step="1">
+                        <input type="number" value="61" class="form-control size mr-1" name="height" id="height" step="1">
                         <span class="m-1 mr-3">Millimeter</span>
                         <select class="form-control selectpicker fas d-none" id="sizepresets">
                             <option class="fas">&#xf5cb;</option>
