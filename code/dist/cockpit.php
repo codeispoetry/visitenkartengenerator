@@ -3,8 +3,8 @@
 
         <div class="list-group-item list-group-item-action flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between">
-                <h6 class="mb-1">Datenformat</h6>
-                <small class="" title="Mit Beschnittzugabe">
+                <h6 class="mb-1">Datenformat mit Beschnittzugabe</h6>
+                <small class="" title="mit Beschnittzugabe">
                     <i class="fas fa-question-circle"></i>
                 </small>
             </div>

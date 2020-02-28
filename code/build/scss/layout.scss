@@ -86,4 +86,17 @@ $chess2: #555;
 
 .canvas{
   box-shadow: #999 3px 10px 10px;
+  position: relative;
+}
+
+
+.text-yellow, footer a:hover {
+  color: #feee00;
+}
+
+.bleed{
+  position: absolute;
+  border: 15px dashed rgba(200, 33, 33, 0.5);
+  height: 100%;
+  width: 100%;
 }
