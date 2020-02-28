@@ -54,7 +54,26 @@
         </div>
 
         <div class="list-group-item list-group-item-action flex-column align-items-start">
-            <input type="text" placeholder="Stadt" name="city" id="city" value="" class="form-control trigger">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#tab-logo" role="tab" aria-controls="home" aria-selected="true">Logo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#tab-quote" role="tab" aria-controls="profile" aria-selected="false">Zitat</a>
+                </li>
+
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab-logo" role="tabpanel" aria-labelledby="home-tab">
+                    <input type="text" placeholder="Stadt" name="city" id="city" value="" class="form-control trigger">
+                </div>
+                <div class="tab-pane" id="tab-quote" role="tabpanel" aria-labelledby="profile-tab">
+                    <textarea placeholder="Zitat" name="quote" id="quote" class="form-control trigger"></textarea>
+                </div>
+            </div>
         </div>
 
         <div class="list-group-item list-group-item-action flex-column align-items-start">
