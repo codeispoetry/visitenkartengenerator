@@ -19,4 +19,15 @@ $(document).ready(function () {
 
     $('.message').hide();
 
+
+    $('#logo-tab').click( function(){
+        quote.svg.remove();
+        backlogo.draw();
+    });
+
+    $('#quote-tab').click( function(){
+        backlogo.svg.remove();
+        quote.draw();
+    });
+
 });

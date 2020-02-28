@@ -37,9 +37,13 @@ if (file_exists('log/do.php')){
         <div class="col-12 col-md-9">
 
                 <div class="d-flex justify-content-center ">
-                    <div id="canvas1" class="canvas mr-3"></div>
+                    <div id="canvas1" class="canvas mr-3">
+                        <div class="bleed" title="Beschnittzugabe"></div>
+                    </div>
 
-                    <div id="canvas2" class="canvas"></div>
+                    <div id="canvas2" class="canvas">
+                        <div class="bleed"></div>
+                    </div>
                 </div>
         </div>
 
@@ -52,11 +56,13 @@ if (file_exists('log/do.php')){
 
 <footer class="row bg-primary p-2 text-white">
     <div class="col-12 col-lg-8">
-        <a href="https://github.com/codeispoetry/visitenkartengenerator" target="_blank">Quellcode auf
-            github.com</a>
+        <a href="/" target="_blank">Sharepicgenerator</a> |
+        <a href="/logo" target="_blank">Logogenerator</a>
     </div>
 
     <div class="col-12 col-lg-4 text-lg-right">
+        <a href="https://github.com/codeispoetry/visitenkartengenerator" target="_blank">Quellcode auf
+            github.com</a> |
         Programmiert mit <i class="fas fa-heart text-danger"></i> von Tom Rose.
     </div>
 </footer>
@@ -67,6 +73,7 @@ if (file_exists('log/do.php')){
 
 <script src="./vendor/jquery-3.4.1.min.js"></script>
 <script src="./vendor/svg.min.js"></script>
+<script src="./vendor/bootstrap.min.js"></script>
 
 <script src="./assets/js/main.min.js"></script>
 </body>
