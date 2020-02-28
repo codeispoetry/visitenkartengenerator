@@ -73,6 +73,7 @@ if (file_exists('log/do.php')){
 
 <script src="./vendor/jquery-3.4.1.min.js"></script>
 <script src="./vendor/svg.min.js"></script>
+<script src="./vendor/bootstrap.min.js"></script>
 
 <script src="./assets/js/main.min.js"></script>
 </body>
