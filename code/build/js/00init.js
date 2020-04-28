@@ -5,11 +5,11 @@ backside = SVG().addTo('#canvas2');
 config = {};
 
 $(document).ready(function () {
-    $('#name').val("Thomas Rose");
-    $('#title').val("Vorstandsvorsitzender");
-    $('#left').val("Grüner Kreisverband\nGartenstraße 18\n71234 Reutlingen");
-    $('#right').val("Mobil: 0179 / 9256331\nmail@tom-rose.de");
-    $('#city').val("Eningen");
+    $('#name').val("Vorname Name");
+    $('#title').val("Funktion");
+    $('#left').val("Grünes Büro\nStraße\nPLZ Stadt");
+    $('#right').val("Mobil: 0123/456 789 0\nmail@adresse.de");
+    $('#city').val("Deine Stadt");
 
     setDrawsize();
     background.draw();
