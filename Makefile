@@ -30,4 +30,4 @@ down:
 	docker-compose down
 
 deploy:
-	docker-compose exec webserver bash /root/scripts/deploy.sh
+	docker-compose exec webserver rsync -avhz --exclude log/log.txt --exclude tmp /var/www/html/dist/ tom@sharepicgenerator.de:/var/www/html/visitenkarten --delete

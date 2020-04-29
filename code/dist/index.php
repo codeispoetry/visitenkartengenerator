@@ -45,6 +45,10 @@ if (file_exists('log/do.php')){
                         <div class="bleed"></div>
                     </div>
                 </div>
+
+                <div class="text-center mt-5 text-danger">
+                    Für fehlerhafte Druckdaten wird keine Gewähr übernommen!<br>
+                </div>
         </div>
 
         <div class="col-12 col-md-3 cockpit">
